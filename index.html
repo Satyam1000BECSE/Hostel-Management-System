@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Hostel Management website</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Responsive.css"> 
+
+
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#">
+                    <img src="Hostel logo.png" alt="Logo" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#Home">Home</a></li>
+                <div class="popup-button">
+                    <a href="#" onclick="toggleMenu('admissionMenu','Admission')">Admission</a>
+                    <ul class="popup-menu" id="admissionMenu">
+                        <li><a href="#Admission" onclick="openForm('applyAdmissionForm')">Apply For Admission</a></li>
+                        <li><a href="#Admission" onclick="openForm('checkStatusForm')">Check Application Status</a></li>
+                        <li><a href="#Admission" onclick="openForm('checkStatusForm')">Print Fee Receipt</a></li>
+                        <li><a href="#Admission" onclick="openForm('instructions')">Instructions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Student Zone Menu -->
+                <div class="popup-button">
+                    <a href="#" onclick="toggleMenu('studentZoneMenu','Student Zone')">Student Zone</a>
+                    <ul class="popup-menu" id="studentZoneMenu">
+                        <li><a href="#Student Zone" onclick="openForm('online-fee-payment')">Online Fee Payment</a></li>
+                        <li><a href="#Student Zone" onclick="openForm('student-feedback')">Student Feedback</a></li>
+                        <li><a href="#Student Zone" onclick="openForm('rating-section')">Rating</a></li>
+                    </ul>
+                </div>
+                <div class="popup-button">
+                    <a href="#" onclick="toggleMenu('roomsOverview','Room')">Room</a>
+                    <ul class="popup-menu" id="roomsOverview">
+                        <li><a href="#Room" onclick="openForm('room-overview')">Rooms Overview</a></li>
+                        <li><a href="#Room" onclick="openForm('room-overview')">Guest Rooms</a></li>
+                        <li><a href="#Room" onclick="openForm('rating-section')">Facilities</a></li>
+                    </ul>
+                </div>
+                <li><a href="#Contact Us">Contact Us</a></li>
+                <div class="popup-button">
+                    <a href="#" onclick="toggleMenu('userHelp','User help')">User help</a>
+                    <ul class="popup-menu" id="userHelp">
+                        <li><a href="#User help" onclick="openForm('helpBox')">Help Center</a></li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home section -->
+    <section id="Home" class="box">
+        <h1 class="section-title">Home</h1>
+        <div class="notice-bar">
+            <div class="notice-bar-content">
+                <i class="fas fa-info-circle"></i> The website is under construction.
+                <i class="fas fa-info-circle"></i> We are fixing some issues with the website.
+                <i class="fas fa-info-circle"></i> Keep waiting, the website will open soon.
+            </div>
+        </div>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="hostel 1.jpg" height="750px" width="1186px" alt="Image 1"></div>
+                <div class="slide"><img src="hostel 2.jpg" height="750px" width="1186px" alt="Image 2"></div>
+                <div class="slide"><img src="hostel 3.jpg" height="750px" width="1186px" alt="Image 3"></div>
+                <div class="slide"><img src="hostel 1.jpg" height="750px" width="1186px" alt="Image 4"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission section -->
+    <section id="Admission" class="box hidden">
+        <h1 class="section-title">Admission</h1>
+        <div id="applyAdmissionForm" class="form-section">
+            <h2>Apply Admission Form</h2>
+            <form>
+                <div class="input-data">
+                    <p><label for="enrollmentNo">Enrollment No:</label></p>
+                    <p><input type="text" id="enrollmentNo" name="enrollmentNo"></p>
+                </div>
+
+                <div class="input-data">
+                    <p><label for="studentName">Student Name:</label></p>
+                    <p><input type="text" id="studentName" name="studentName"></p>
+                </div>
+                <div class="input-data">
+                    <p><label for="fatherName">Father Name:</label></p>
+                    <p><input type="text" id="fatherName" name="fatherName"></p>
+                </div>
+
+                <div class="input-data">
+                    <p><label for="motherName">Mother Name:</label></p>
+                    <p><input type="text" id="motherName" name="motherName"></p>
+                </div>
+
+                <div class="input-data">
+                    <p><label for="dob">DOB:</label></p>
+                    <p><input type="date" id="dob" name="dob"></p>
+                </div>
+
+                <div class="input-data">
+                    <p><label for="gender">Gender:</label></p>
+                    <p><select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select></p>
+                </div>
+                <div class="input-data">
+                    <p><label for="mobileNo">Mobile No:</label></p>
+                    <p><input type="text" id="mobileNo" name="mobileNo"></p>
+                </div>
+
+                <div class="input-data">
+                    <p><label for="address">Address:</label></p>
+                    <p><input type="text" id="address" name="address"></p>
+                </div>
+
+                <div class="input-data">
+                    <p><label for="email">Email:</label></p>
+                    <p><input type="email" id="email" name="email"></p>
+                </div>
+
+                <div>
+                    <h2>Various Fee details</h2>
+                    <div class="input-data">
+                        <p><label for="section">Section:</label></p>
+                        <p><input type="text" id="section" name="section"></p>
+                    </div>
+
+                    <div class="input-data">
+                        <p><label for="feetype">Gender:</label></p>
+                        <p><select id="feetype" name="feetype">
+                            <option value="messfee">Mess Fee</option>
+                            <option value="hostelroomrent">Hostel Room Rent</option>
+                            <option value="other">Other</option>
+                        </select></p>
+                    </div>
+
+                    <div class="input-data"> 
+                        <p><label for="courseName">No. Of Student/Course Name/Number Of Room:</label></p>
+                        <p><input type="text" id="courseName" name="courseName"></p>
+                    </div>
+                </div>
+                <div class="note">
+                    <p>1) मैं प्रमाणित करता/करती हूं कि मेरे द्वारा आवेदन पत्र में दी गई उपरोक्त जानकारी सही है। यदि कोई
+                        भी जानकारी असत्य पायी जाती हें तो मेरा आवेदन निरस्त कर दिया जाये एवं किसी भी प्रकार की हानि का
+                        समस्त उत्तरदायित्व मेरा होगा।
+                    </p>
+                    <p>2) मेरे द्वारा फीस जमा करने के पूर्व, उससे सम्बंधित विभाग से फीस का सत्यापन किया जा चुका हैं यदि
+                        जमा किये गएँ शुल्क में किसी भी प्रकार की त्रुटि पाई जाती हैं तो मैं स्वयं जिम्मेदार रहूँगा /
+                        रहूगी, तो समस्त प्रकार के Financial नुकसान के लिये स्वयं की जिम्मेदारी होंगी|"</p>
+                    <p>NOTE - सभी आवेदकों को सूचित किया जाता है कि कि इस लिंक से किसी भी प्रकार के शुल्क भरने के पूर्व
+                        विश्वविद्यालय के सम्बंधित विभाग से आदेश लेना अनिवार्य है बिना आदेश के किसी भी प्रकार का शुल्क जो
+                        कि इस लिंक के माध्यम से कटाया गया होगा उसको विश्वविद्यालय द्वारा मान्य नहीं किया जायेगा तथा इस
+                        प्रकार के समस्त शुल्क की जबाबदेही आवेदक की स्वंय की होगी|</p>
+                </div>
+            <button class="submit" type="submit">Submit</button>
+        </form>
+        </div>
+
+        <div id="checkStatusForm" class="form-section">
+            <h2>Check Application Status</h2>
+            <form id="mainForm">
+                <div class="input-data">
+                    <label class="receipt-label" for="option1" style="cursor: pointer;">Print Fee Receipt</label>
+                    <input type="hidden" id="option1" name="formOption" value="printReceipt">
+                </div>
+                <div class="input-data">
+                    <label class="receipt-label" for="option2" style="cursor: pointer;">Check Application Status</label>
+                    <input type="hidden" id="option2" name="formOption" value="checkStatus">
+                </div>
+                <div id="content2" class="content">
+                    <h3 class="receipt-hadding">Check Application Status</h3>
+                    <p class="receipt-data">Receipt No.:<input type="text" id="receiptNo2" name="receiptNo2"></p>
+                    <p class="receipt-data">Mobile No.: <input type="text" id="mobileNo" name="mobileNo"></p>
+                    <p class="receipt-data">DOB: <input type="date" id="dob" name="dob"></p>
+                </div>
+                <div id="content1" class="content">
+                    <h3 class="receipt-hadding">Print Fee Receipt</h3>
+                    <p class="receipt-data">Receipt No.: <input type="text" id="receiptNo1" name="receiptNo1"></p>
+                    <p class="receipt-data">Enrollment No.: <input type="text" id="enrollmentNo" name="enrollmentNo"></p>
+                    <p class="receipt-data">Email ID: <input type="email" id="email" name="email"></p>
+                </div>
+                <div class="input-checkbox">
+                    <p> <label  for="printFeeReceiptCheckbox">Print Fee Receipt</label></p>
+                    <p><input type="checkbox" id="printFeeReceiptCheckbox" name="printFeeReceipt" disabled></p> 
+                </div>
+
+                <div class="input-checkbox">
+                    <p><label  for="checkApplicationStatusCheckbox">Check Application Status</label></p>
+                    <p><input  type="checkbox" id="checkApplicationStatusCheckbox" name="checkApplicationStatus" disabled></p>
+                </div>
+
+                <button class="submit" type="submit" id="submitButton" disabled>Submit</button>
+            </form>
+        </div>
+        <div id="instructions" class="form-section">
+            <h2>Instructions</h2>
+            <p>Please follow the instructions carefully for each option.</p>
+        </div>
+    </section>
+
+    <!-- Student Zone Sections -->
+    <section id="Student Zone" class="box hidden">
+        <h1 class="section-title">Student Zone</h1>
+        <!-- Online Fee Payment Form Section -->
+        <div id="online-fee-payment" class="form-section">
+            <h2>Online Fee Payment</h2>
+            <form action="submit_fee_payment" method="post">
+                <!-- Form fields for fee payment -->
+                <div class="input-data">
+                    <p><label for="student-name">Student Name:</label></p>
+                    <p><input type="text" id="student-name" name="student-name" required></p>
+                </div>
+                <div class="input-data">
+                    <p><label for="student-id">Student ID:</label></p>
+                    <p><input type="text" id="student-id" name="student-id" required></p>
+                </div>
+                <div class="input-data">
+                    <p><label for="student-class">Class:</label></p>
+                    <p><input type="text" id="student-class" name="student-class" required></p>
+                </div>
+                <div class="input-data">
+                    <p><label for="student-email">Email:</label></p>
+                    <p><input type="email" id="student-email" name="student-email" required></p>
+                </div>
+                <div class="input-data">
+                    <p><label for="tuition-fee">Tuition Fee:</label>
+                    <p>
+                    <p><input type="number" id="tuition-fee" name="tuition-fee" required></p>
+                </div>
+                <div class="input-data">
+                    <p><label for="lab-fee">Lab Fee:</label></p>
+                    <p> <input type="number" id="lab-fee" name="lab-fee" required></p>
+                </div>
+                <div class="input-data">
+                    <p><label for="library-fee">Library Fee:</label></p>
+                    <p><input type="number" id="library-fee" name="library-fee" required></p>
+                </div>
+                <div class="input-data">
+                    <p class="data"><label for="other-fee">Other Fee:</label></p>
+                    <p><input type="number" id="other-fee" name="other-fee"></p>
+                </div>
+
+                <p class="data"><label for="note">Any additional notes:</label>
+                    <textarea id="note" name="note" rows="4"></textarea>
+                </p>
+
+                <p class="data"><label for="captcha">Please enter the text below:</label>
+                <div class="captcha">
+                    <input type="text" id="captcha" name="captcha" required>
+                    <img src="captcha_image_url" alt="CAPTCHA Image">
+                </div>
+                </p>
+
+                <p class="submit"><button type="submit">Submit</button></p>
+            </form>
+        </div>
+
+        <!-- Student Feedback Form Section -->
+        <div id="student-feedback" class="form-section">
+            <h2>Student Feedback</h2>
+            <form action="submit_feedback" method="post">
+                <!-- Form fields for feedback -->
+                 <div class="input-data">
+                    <p><label for="feedback-name">Name:</label></p>
+                    <p><input type="text" id="feedback-name" name="feedback-name" required></p>
+                </div>
+                <div class="input-data">
+                    <p><label for="feedback-email">Email:</label></p>
+                    <p><input type="email" id="feedback-email" name="feedback-email" required></p>
+                </div>
+                <div class="input-data">
+                    <p><label for="feedback">Feedback:</label></p>
+                    <p><textarea  id="feedback" name="feedback" rows="4" required></textarea></p>
+                </div>
+                <button class="submit" type="submit">Submit Feedback</button>
+            </form>
+        </div>
+
+        <!-- Rating Section -->
+        <div id="rating-section" class="form-section">
+            <h2>Rating</h2>
+            <form action="submit_rating" method="post">
+                <!-- Rating fields -->
+                <label for="rating">Rate our services:</label>
+                <div class="rating">
+                    <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+                    <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+                    <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+                    <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+                    <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+                </div>
+                <button class="submit" type="submit">Submit Rating</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Room section -->
+    <section id="Room" class="box hidden">
+        <h1 class="section-title">Room</h1>
+        <div id="room-overview" class="form-section">
+            <h2>Room Overview</h2>
+            <div id="menu">
+                <button onclick="showFilters('all')">Total Rooms</button>
+                <button onclick="showFilters('available')">Available Rooms</button>
+                <button onclick="showFilters('booked')">Booked Rooms</button>
+                <div id="filters" style="display: none;">
+                    <select id="floorFilter" onchange="filterRooms()">
+                        <option value="all">All Floors</option>
+                        <option value="0">Ground Floor</option>
+                        <option value="1">First Floor</option>
+                        <option value="2">Second Floor</option>
+                        <option value="3">Third Floor</option>
+                    </select>
+                    <select id="typeFilter" onchange="filterRooms()">
+                        <option value="all">All Types</option>
+                        <option value="single">Single Bed</option>
+                        <option value="double">Double Bed</option>
+                        <option value="guest">Guest Room</option>
+                    </select>
+                </div>
+            </div>
+            <div id="room-container">
+                <!-- Room elements will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+
+    <section id="User help" class="box hidden">
+        <h1 class="section-title">User help</h1>
+        <div id="helpBox" class="form-section">
+            <h2>Help Center</h2>
+            <input type="text" id="searchInput" placeholder="Search help topics..." onkeyup="searchTopics()">
+            <ul id="helpTopics">
+                <li onclick="showTopicDetail('How to create an Account')">How to create an Account</li>
+                <li onclick="showTopicDetail('How to Reset your password')">How to Reset your password</li>
+                <li onclick="showTopicDetail('How to Update your profile Information')">How to Update your profile
+                    Information</li>
+                <li onclick="showTopicDetail('Payment Methods and Security')">Payment Methods and Security</li>
+                <li onclick="showTopicDetail('Account Deletion')">Account Deletion</li>
+                <li onclick="showTopicDetail('How to leave a review')">How to leave a review</li>
+                <li onclick="showTopicDetail('Privacy Policy Overview')">Privacy Policy Overview</li>
+                <li onclick="showTopicDetail('Terms of Service')">Terms of Service</li>
+                <li onclick="showTopicDetail('Technical Support for Website Issues')">Technical Support for Website
+                    Issues</li>
+                <li onclick="showTopicDetail('Website Navigation')">Website Navigation</li>
+                <li onclick="showTopicDetail('How to Logging In Account')">How to Logging In Account</li>
+                <li onclick="showTopicDetail('Managing Your Account')">Managing Your Account</li>
+                <li onclick="showTopicDetail('How to print fee recipt')">How to print fee recipt</li>
+                <li onclick="showTopicDetail('How to Check Application Status')">How to Check Application Status</li>
+                <li onclick="showTopicDetail('How to Apply For Admission Process')">How to Apply For Admission Process
+                </li>
+                <li onclick="showTopicDetail('How to Check Rooms Conditions')">How to Check Rooms Conditions</li>
+                <li onclick="showTopicDetail('Contacting Customer Support')">Contacting Customer Support</li>
+            </ul>
+            <div id="topicDetail"></div>
+        </div>
+
+    </section>
+    <!-- Footer section -->
+    <footer id="Contact Us">
+        <div class="footer-container">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>Email: <a href="mailto:satammourya@gmail.com">satammourya@gmail.com</a></li>
+                    <!--<li>Phone: +1234567890</li>-->
+                    <li>Address: Aryabhatt Hostel,Kailash Nagar,Mahalgaon,Gwalior 474011(M.P.),India</li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <h3>Connect With Us</h3>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/satyam-mourya-861bb423a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                            target="_blank"><img src="linkedin.png" alt="LinkedIn"></a></li>
+                    <li><a href="https://x.com/SatyamM83399956?t=hX6vbXJfCiuWrybHRmvE3w&s=09" target="_blank"><img
+                                src="twitter.png" alt="Twitter"></a></li>
+                    <li><a href="https://www.facebook.com/satyam.mourya.1000?mibextid=ZbWKwL" target="_blank"><img
+                                src="facebook.png" alt="Facebook"></a></li>
+                    <li><a href="mailto:satammourya.com"><img src="email.png" alt="Email"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="index.js"></script> 
+    <!-- <script>
+        // Toggle visibility of a specific popup menu
+        function toggleMenu(menuId, sectionId) {
+            var menu = document.getElementById(menuId);
+            var section = document.getElementById(sectionId);
+            var menus = document.getElementsByClassName('popup-menu');
+    
+            // Hide all other popup menus
+            for (var i = 0; i < menus.length; i++) {
+                if (menus[i] !== menu) {
+                    menus[i].style.display = 'none';
+                }
+            }
+    
+            // Toggle the current menu
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    
+            // Show the related section and hide others
+            if (!section.classList.contains('hidden')) {
+                hideAllSections();
+            } else {
+                hideAllSections();
+                section.classList.remove('hidden');
+            }
+        }
+    
+        // Open a specific form section and hide others
+        function openForm(formId) {
+            hideAllForms();
+            document.getElementById(formId).style.display = 'block';
+        }
+    
+        // Hide all sections
+        function hideAllSections() {
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                if (section.id !== 'Home') {
+                    section.classList.add('hidden');
+                }
+            });
+        }
+    
+        // Hide all form sections
+        function hideAllForms() {
+            var forms = document.getElementsByClassName("form-section");
+            for (var i = 0; i < forms.length; i++) {
+                forms[i].style.display = 'none';
+            }
+        }
+    
+        // Hide all menus when clicking outside
+        window.onclick = function (event) {
+            var menus = document.getElementsByClassName('popup-menu');
+            for (var i = 0; i < menus.length; i++) {
+                var menu = menus[i];
+                // Check if the click was outside the menu and its button
+                if (!event.target.closest('.popup-button') && menu.style.display === 'block') {
+                    menu.style.display = 'none';
+                }
+            }
+        }
+    </script>
+    <script>
+        // Toggle visibility of a specific popup menu
+        function toggleMenu(menuId) {
+            var menu = document.getElementById(menuId);
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Open a specific form section and hide others
+        function openForm(formId) {
+            hideAllForms();
+            document.getElementById(formId).style.display = 'block';
+        }
+
+        // Hide all form sections
+        function hideAllForms() {
+            var forms = document.getElementsByClassName("form-section");
+            for (var i = 0; i < forms.length; i++) {
+                forms[i].style.display = 'none';
+            }
+        }
+
+        // Hide all menus when clicking outside
+        window.onclick = function (event) {
+            var menus = document.getElementsByClassName('popup-menu');
+            for (var i = 0; i < menus.length; i++) {
+                var menu = menus[i];
+                // Check if the click was outside the menu and its button
+                if (!event.target.closest('.popup-button') && menu.style.display === 'block') {
+                    menu.style.display = 'none';
+                }
+            }
+        }
+    </script>
+    <script>
+        document.querySelector('label[for="option1"]').addEventListener('click', function () {
+            document.getElementById('content1').style.display = 'block';
+            document.getElementById('content2').style.display = 'none';
+            document.getElementById('printFeeReceiptCheckbox').checked = true;
+            document.getElementById('checkApplicationStatusCheckbox').checked = false;
+            document.getElementById('printFeeReceiptCheckbox').disabled = false;
+            document.getElementById('checkApplicationStatusCheckbox').disabled = true;
+            checkFormValidity();
+        });
+
+        document.querySelector('label[for="option2"]').addEventListener('click', function () {
+            document.getElementById('content1').style.display = 'none';
+            document.getElementById('content2').style.display = 'block';
+            document.getElementById('printFeeReceiptCheckbox').checked = false;
+            document.getElementById('checkApplicationStatusCheckbox').checked = true;
+            document.getElementById('printFeeReceiptCheckbox').disabled = true;
+            document.getElementById('checkApplicationStatusCheckbox').disabled = false;
+            checkFormValidity();
+        });
+
+        const inputs = document.querySelectorAll('#mainForm input');
+        inputs.forEach(input => {
+            input.addEventListener('input', checkFormValidity);
+        });
+
+        function checkFormValidity() {
+            const content1Visible = document.getElementById('content1').style.display === 'block';
+            const content2Visible = document.getElementById('content2').style.display === 'block';
+
+            let allFilled = false;
+            if (content1Visible) {
+                const inputs = document.querySelectorAll('#content1 input');
+                allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
+            } else if (content2Visible) {
+                const inputs = document.querySelectorAll('#content2 input');
+                allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
+            }
+
+            const checkbox1 = document.getElementById('printFeeReceiptCheckbox').checked;
+            const checkbox2 = document.getElementById('checkApplicationStatusCheckbox').checked;
+
+            const checkboxesValid = checkbox1 || checkbox2;
+            document.getElementById('submitButton').disabled = !(allFilled && checkboxesValid);
+        }
+    </script>
+    <script>const roomContainer = document.getElementById('room-container');
+
+        const totalRooms = 180;
+        const floors = ['Ground Floor', 'First Floor', 'Second Floor', 'Third Floor'];
+        const roomsPerFloor = totalRooms / floors.length;
+
+        // Sample data for rooms
+        const rooms = Array.from({ length: totalRooms }, (_, i) => ({
+            number: i + 1,
+            floor: Math.floor(i / roomsPerFloor),
+            type: i % 2 === 0 ? 'single' : 'double', // alternate between single and double for demo
+            status: Math.random() > 0.5 ? 'available' : 'booked' // random status for demo
+        }));
+
+        // Add guest rooms
+        floors.forEach((_, index) => {
+            rooms.push({
+                number: `G${index + 1}`,
+                floor: index,
+                type: 'guest',
+                status: Math.random() > 0.5 ? 'available' : 'booked' // random status for demo
+            });
+        });
+
+        function createRoomElement(room) {
+            const roomElement = document.createElement('div');
+            roomElement.className = `room ${room.status} ${room.type}`;
+            roomElement.textContent = room.number;
+            roomElement.dataset.floor = room.floor;
+            roomElement.dataset.type = room.type;
+            roomElement.dataset.status = room.status;
+            return roomElement;
+        }
+
+        rooms.forEach(room => {
+            const roomElement = createRoomElement(room);
+            roomContainer.appendChild(roomElement);
+        });
+
+        function showFilters(filter) {
+            const filtersDiv = document.getElementById('filters');
+            filtersDiv.style.display = 'flex';
+            filterRooms(filter);
+        }
+
+        function filterRooms(filter = 'all') {
+            const selectedFloor = document.getElementById('floorFilter').value;
+            const selectedType = document.getElementById('typeFilter').value;
+            const roomElements = roomContainer.children;
+
+            for (let i = 0; i < roomElements.length; i++) {
+                const roomElement = roomElements[i];
+                const status = roomElement.dataset.status;
+                const floor = roomElement.dataset.floor;
+                const type = roomElement.dataset.type;
+
+                if (
+                    (filter === 'all' || filter === status) &&
+                    (selectedFloor === 'all' || selectedFloor == floor) &&
+                    (selectedType === 'all' || selectedType === type)
+                ) {
+                    roomElement.style.display = 'flex';
+                } else {
+                    roomElement.style.display = 'none';
+                }
+            }
+        }
+
+        // Function to simulate updating room statuses
+        function updateRoomStatus(roomNumber, newStatus) {
+            const room = rooms.find(r => r.number === roomNumber);
+            if (room) {
+                room.status = newStatus;
+                const roomElement = roomContainer.querySelector(`[data-floor="${room.floor}"][data-type="${room.type}"]`);
+                roomElement.className = `room ${room.status} ${room.type}`;
+                roomElement.dataset.status = room.status;
+            }
+        }
+
+        // Example: Update room 1 to 'booked'
+        updateRoomStatus(1, 'booked');
+    </script>
+    <script>
+        const topics = {
+            'How to create an Account': 'Detail about Topic 1',
+            'How to Reset your password': 'Detail about Topic 2',
+            'How to Update your profile Information': 'Detail about Topic 3',
+            'Payment Methods and Security': 'Detail about Topic 4',
+            'Account Deletion': 'Detail about Topic 5',
+            'How to leave a review': 'Detail about Topic 6',
+            'Privacy Policy Overview': 'Detail about Topic 7',
+            'Terms of Service': 'Detail about Topic 8',
+            'Technical Support for Website Issues': 'Detail about Topic 9',
+            'Website Navigation': 'Detail about Topic 10',
+            'How to Logging In Account': 'Detail about Topic 4',
+            'Managing Your Account': 'Detail about Topic 5',
+            'How to print fee recipt': 'Detail about Topic 6',
+            'How to Check Application Status': 'Detail about Topic 7',
+            'How to Apply For Admission Process': 'Detail about Topic 8',
+            'How to Check Rooms Conditions': 'Detail about Topic 9',
+            'Contacting Customer Support': 'Detail about Topic 10'
+        };
+
+        function searchTopics() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const ul = document.getElementById('helpTopics');
+            const li = ul.getElementsByTagName('li');
+            for (let i = 0; i < li.length; i++) {
+                const topic = li[i].innerText.toLowerCase();
+                if (topic.includes(input)) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+        function showTopicDetail(topic) {
+            document.getElementById('topicDetail').innerText = topics[topic];
+        }
+    </script>
+    <script>let currentIndex = 0;
+
+        function showNextSlide() {
+            const slides = document.querySelector('.slides');
+            const totalSlides = slides.children.length;
+            currentIndex = (currentIndex + 1) % totalSlides;
+            const offset = -currentIndex * 100;
+            slides.style.transform = `translateX(${offset}%)`;
+        }
+
+        setInterval(showNextSlide, 3000);
+    </script> -->
+</body>
+
+</html>
